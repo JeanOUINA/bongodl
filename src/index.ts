@@ -365,7 +365,8 @@ export class Downloader extends EventEmitter {
     })&{
         startAuto?: boolean,
         stateDir?: string,
-        concurrent?: number
+        concurrent?: number,
+        emitStatus?: boolean
     }){
         super()
         this.concurrent = options.concurrent || 20
@@ -377,6 +378,7 @@ export class Downloader extends EventEmitter {
         }else{
             this.stateDir = mkdtempSync(`bongo-`)
         }
+        this.emitStatus = !!options.emitStatus
         if("manifest" in options){
             try{
                 const manifest = parseManifest(options.manifest)
@@ -429,11 +431,13 @@ export class Downloader extends EventEmitter {
     }
     stateDir:string
     concurrent:number
+    emitStatus:boolean
     startFetching(manifest:Manifest){
         let needByte = 0
         let downloaded = 0
         const startDate = Date.now()
         const emitProgress = () => {
+            if(!this.emitStatus)return
             const elapsed = Date.now()-startDate
             this.emit("status", {
                 total: manifest.filesize,
