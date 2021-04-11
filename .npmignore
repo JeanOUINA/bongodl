@@ -1,0 +1,6 @@
+src
+test
+.gitignore
+bongo.js
+lightcord-win32-ia32.zip
+tsconfig.json

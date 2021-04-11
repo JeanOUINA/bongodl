@@ -16,7 +16,8 @@
   "scripts": {
     "test": "mocha",
     "watch": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
