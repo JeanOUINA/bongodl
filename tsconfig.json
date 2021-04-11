@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "target": "ES5",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "downlevelIteration": true,
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "declaration": true
+    }
+}

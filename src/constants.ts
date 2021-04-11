@@ -1,0 +1,10 @@
+export const MANIFEST_STRING_HEADER = "#BONGODL-MANIFEST-START#"
+export const MANIFEST_STRING_FOOTER = "#BONGODL-MANIFEST-END#"
+export const MANIFEST_BUFFER_HEADER = Buffer.from([0x13, 0x37, 0x69, 0x42, 0x00])
+export enum VALUE_TYPE {
+    FILESIZE,
+    INTEGRITY,
+    DOWNLOAD,
+    PIECE
+}
+export const MANIFEST_BUFFER_FOOTER = Buffer.from("BONGO", "utf8")
