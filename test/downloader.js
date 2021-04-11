@@ -19,18 +19,12 @@ describe("Downloader", () => {
             await rmdir(dirname(filepath), {recursive: true})
         })
         downloader.on("status", status => {
-            const progress20 = Math.round(status.ratio*40)
-            let progress = `\x1b[47m${" ".repeat(progress20)}\x1b[40m${" ".repeat(40-progress20)}`
-            let percentage = String(status.percentage)
+            const progress40 = Math.round(status.ratio*40)
+            let progress = `\x1b[47m${" ".repeat(progress40)}\x1b[40m${" ".repeat(40-progress40)}`
+            let percentage = status.percentage.toFixed()
             const numberLength = percentage.split(".")[0].length
             if(numberLength < 2){
                 percentage = "0"+percentage
-            }
-            const periodLength = percentage.split(".")[1]?.length
-            if(!periodLength){
-                percentage += ".00"
-            }else if(periodLength < 2){
-                percentage = percentage+"0"
             }
             process.stdout.write(`\x1b[2K\x1b[0G[${progress}] ${percentage}%`)
         })

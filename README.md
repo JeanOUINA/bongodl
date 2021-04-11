@@ -3,7 +3,7 @@
 npm install bongodl
 ```
 # Description
-This module basically downloads files "faster" (see [benchmarks](#benchmarks)), verify them (sha256 integrity) and automatically retries downloading parts that failed with multiple download urls support.
+This module basically downloads files "faster" (see [benchmarks](benchmarks.md)), verify them (sha256 integrity) and automatically retries downloading parts that failed with multiple download urls support.
 # Support
     [x] Concurrent pieces download
     [x] Slicing API
