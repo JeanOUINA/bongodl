@@ -60,15 +60,5 @@ describe("Manifest", () => {
                 if(parsedPiece.integrity !== piece.integrity || piece.range[0] !== parsedPiece.range[0] || piece.range[1] !== parsedPiece.range[1])throw new bongodl.ParseError(`Couldn't parse pieces`)
             }
         })
-
-        it("should create a manifest from a file", async () => {
-            const manifest = await bongodl.createManifest({
-                downloads: [downloadLink],
-                filepath: join(__dirname, "5MB.zip"),
-                // 1Mb
-                pieceSize: 1e6
-            })
-            // There's no real way to verify this.
-        })
     })
 })
