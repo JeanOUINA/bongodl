@@ -1,13 +1,11 @@
-# Benchmark
+# Benchmarks
 Please see the [Configuration](#Configuration) used for this Benchmark.
 ## Results
-The benchmark took 72.42 seconds.<br>
+The benchmark took 36.88 seconds.<br>
 | Method | File Size | Elapsed Time | Average Speed |
 |-|-|-|-|
-|**Bongo (with status)**|143.7 Mo|**6.28**s|**22.9 Mo/s**|
-|Bongo|143.7 Mo|6.74s|21.3 Mo/s|
-|node-fetch|143.7 Mo|28.55s|5.0 Mo/s|
-|node-fetch (with status)|143.7 Mo|30.65s|4.7 Mo/s|
+|**Bongo**|143.7 Mo|**6.39s**|**22.5 Mo/s**|
+|node-fetch|143.7 Mo|30.48s|4.7 Mo/s|
 
 ## Configuration
 ```

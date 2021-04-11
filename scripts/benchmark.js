@@ -26,14 +26,14 @@ The benchmark took ${variables.time} seconds.<br>
 ${variables.tests.sort((a, b) => a[1] - b[1]).map((test, i) => {
     let name =test[0]
     const filesize = byteSize(manifest.filesize, {units: "metric_octet"})
-    let time = (test[1]/1000).toFixed(2)
+    let time = (test[1]/1000).toFixed(2)+"s"
     let speed = byteSize(manifest.filesize/(test[1]/1000), {units: "metric_octet"})+"/s"
     if(i === 0){
         name = `**${name}**`
         time = `**${time}**`
         speed = `**${speed}**`
     }
-    return `|${name}|${filesize}|${time}s|${speed}|`
+    return `|${name}|${filesize}|${time}|${speed}|`
 }).join("\n")}
 
 ## Configuration
@@ -96,7 +96,7 @@ const { createWriteStream } = require("fs")
     })
     const timeOne = Date.now() - startOne
     console.log(`#1 node-fetch (with status) finished in ${(timeOne/1000).toFixed(2)} seconds.`)
-    console.info(`#2 node-fetch`)
+    /*console.info(`#2 node-fetch`)
     console.warn(`This test will not output anything. Please don't exit.`)
     const startTwo = Date.now()
     await new Promise((resolve, reject) => {
@@ -140,7 +140,7 @@ const { createWriteStream } = require("fs")
         }).on("error", reject)
     })
     const timeThree = Date.now() - startThree
-    console.log(`#3 Bongo finished in ${(timeThree/1000).toFixed(2)} seconds.`)
+    console.log(`#3 Bongo finished in ${(timeThree/1000).toFixed(2)} seconds.`)*/
     console.info(`#4 Bongo (with status)`)
     const startFour = Date.now()
     await new Promise(async (resolve, reject) => {
@@ -156,7 +156,7 @@ const { createWriteStream } = require("fs")
         }).on("status", status => {
             const progress40 = Math.round(status.ratio*40)
             let progress = `\x1b[47m${" ".repeat(progress40)}\x1b[40m${" ".repeat(40-progress40)}`
-            let percentage = status.percentage.toFixed()
+            let percentage = status.percentage.toFixed(2)
             const numberLength = percentage.split(".")[0].length
             if(numberLength < 2){
                 percentage = "0"+percentage
@@ -175,10 +175,10 @@ const { createWriteStream } = require("fs")
     console.info(`Generating benchmarks.md ...`)
     const data = benchmarkMD({
         tests: [
-            ["node-fetch", timeTwo],
-            ["node-fetch (with status)", timeOne],
-            ["Bongo", timeThree],
-            ["Bongo (with status)", timeFour]
+            //["node-fetch", timeTwo],
+            ["node-fetch", timeOne],
+            //["Bongo", timeThree],
+            ["Bongo", timeFour]
         ],
         time: ((Date.now()-startTime)/1000).toFixed(2)
     })
