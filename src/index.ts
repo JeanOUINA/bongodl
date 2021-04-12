@@ -475,7 +475,7 @@ export class Downloader extends EventEmitter {
                 if(needPieceIndex === -1)return
                 const needPiece = pieces[needPieceIndex]
                 stream.write(needPiece.data)
-                needByte = needPiece.byteEnd
+                needByte = needPiece.byteEnd+1
                 pieces.splice(needPieceIndex, 1)
             }
         }

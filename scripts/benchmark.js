@@ -10,7 +10,7 @@ const osName = ({
 const bongo = require("..")
 const { readFileSync } = require("fs")
 const { join, dirname } = require("path")
-const manifest = bongo.parseManifest(readFileSync(join(__dirname, "lightcord.manifest")))
+const manifest = bongo.parseManifest(readFileSync(join(__dirname, "lightcord.manifest"), "utf8"))
 
 const benchmarkMD = (variables) => {
     const cpus = {}
@@ -148,7 +148,8 @@ const { createWriteStream } = require("fs")
         await mkdir(bongotmp, {recursive: true})
 
         new bongo.Downloader({
-            manifest: manifest,
+            // Count the manifest fetching time in the benchmark.
+            manifest_url: "https://lightcord.org/api/v1/gh/releases/Lightcord/Lightcord/0.1.5/lightcord-win32-ia32.zip.manifest",
             concurrent: 10,
             emitStatus: true,
             startAuto: true,
