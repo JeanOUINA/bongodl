@@ -120,11 +120,13 @@ And then, we just navigate through the payloads.
 3. Go to the next payload.
 
 ## Binary File size
+### Example payload
 | Payload length | Instruction ID | size |
 |-|-|-|
 |0x03|0x00|0x0400|
 
-data is the file size. For example, 0x0400 is 1024.
+data is the file size. For example, 0x0400 is 1024.<br>
+You can convert numbers like this:
 ```js
 // 1024
 const size = parseInt("0400", 16)
@@ -139,6 +141,7 @@ if(hex.length % 2 === 1){
 ```
 ## Binary Integrity
 This is where we really save space by using binary encoding instead of string/json
+### Example payload
 | Payload length | Instruction ID | integrity |
 |-|-|-|
 |0x21|0x01|5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef|
@@ -151,12 +154,14 @@ const integrity = integrityBuffer.toString("hex")
 
 Data is the decoded integrity. It now makes 32 bytes (decoded) instead of 64 (hex encoded).
 ## Binary Download links
+### Example payload
 | Payload length | Instruction ID | url |
 |-|-|-|
 |0x1a|0x02|http://127.0.0.1/file.bin|
 
 Data is the utf8 encoded download link. Without the `url:` prefix.
 ## Binary File Pieces
+### Example payload
 | Payload length | Instruction ID | rangeBuffer length | startByteBuffer length | range start byte | range end byte | integrityBuffer
 |-|-|-|-|-|-|-|
 |0x26|0x03|0x04|0x01|0x00|0x0100|5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1
