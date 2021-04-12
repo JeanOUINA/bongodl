@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import * as EventEmitter from "events";
+import {EventEmitter} from "events";
 import { createReadStream, createWriteStream, mkdirSync, mkdtempSync, rmdirSync } from "fs";
 import { readFile, stat } from "fs/promises";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
