@@ -1,6 +1,6 @@
 {
   "name": "bongodl",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Download big files, pauses downloads and resume them and verify integrity.",
   "main": "dist/index.js",
   "dependencies": {
