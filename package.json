@@ -19,7 +19,7 @@
     "test": "mocha",
     "watch": "tsc --watch",
     "build": "tsc",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",

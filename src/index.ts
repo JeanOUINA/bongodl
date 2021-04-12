@@ -521,7 +521,6 @@ export class Downloader extends EventEmitter {
                 }catch(err){
                     downloaded = downloaded - downloadedPiece
                     emitProgress()
-                    console.error(err)
                     return process(time+1)
                 }
             }
