@@ -1,17 +1,34 @@
-# Installation
-```sh
-npm install bongodl
-```
 # Description
 This module basically downloads files "faster" (see [benchmarks](benchmarks.md)), verify them (sha256 integrity) and automatically retries downloading parts that failed with multiple download urls support.
+# Advantages
+- [Fast as fuck](benchmarks.md#results)
+- Easy to use
+- Reliable
+- Automatically checks integrity
+# Disadvantages
+- You need a [manifest](docs/manifest.md) first.
+- The server must support the `Range` header.
+# Installation
+```sh
+# Install using npm
+npm install bongodl
+# Install using yarn
+yarn add bongodl
+```
+# Usage
+See [Documentation](docs/index.md).
 # Support
     [x] Concurrent pieces download
     [x] Slicing API
+    [x] Up to 3 fallback urls
     [x] Manifests
         [x] JSON
         [x] TXT
         [x] Binary
     [x] Download status
+    [x] Saving to file system
+    [ ] Promise API
+    [ ] Streaming API
     [ ] Play/Pause/Cancel API
     [ ] Proxy Support
     [ ] Calculating current download speed

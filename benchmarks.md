@@ -1,11 +1,11 @@
 # Benchmarks
-Please see the [Configuration](#Configuration) used for this Benchmark.
+Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on 2021-04-12T00:42:54.103Z by [`benchmark.js`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
 ## Results
-The benchmark took 36.88 seconds.<br>
+The benchmark took 37.39 seconds.<br>
 | Method | File Size | Elapsed Time | Average Speed |
 |-|-|-|-|
-|**Bongo**|143.7 Mo|**6.39s**|**22.5 Mo/s**|
-|node-fetch|143.7 Mo|30.48s|4.7 Mo/s|
+|**Bongo**|143.7 Mo|**6.75s**|**21.3 Mo/s**|
+|node-fetch|143.7 Mo|30.60s|4.7 Mo/s|
 
 ## Configuration
 ```

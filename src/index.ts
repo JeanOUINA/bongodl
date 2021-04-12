@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
 import EventEmitter from "events";
-import { createReadStream, createWriteStream, mkdtemp, mkdtempSync, rmdirSync } from "fs";
-import { readFile, rm, stat, unlink } from "fs/promises";
+import { createReadStream, createWriteStream, mkdtempSync, rmdirSync } from "fs";
+import { readFile, stat } from "fs/promises";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
 import fetch from "node-fetch"
 import PromisePool from "es6-promise-pool";
@@ -293,18 +293,18 @@ export function formatManifest(manifest:Manifest, format:"string"|"buffer"|"json
             return Buffer.concat(buffers)
         }
         case "json": {
-            return JSON.stringify(manifest)
+            return JSON.stringify(manifest, null, "    ")
         }
     }
 }
 
 export async function createManifest(options:{
-    downloads: string[],
+    downloads: string[]|string,
     filepath: string,
     pieceSize?: number
 }){
-    // 50mb
-    const pieceSize = options.pieceSize || 5e7
+    // 25 MB
+    const pieceSize = options.pieceSize || 25e6
     const stats = await stat(options.filepath)
     if(stats.size === 0)throw new Error("Filesize is 0")
     const lastPieceSize = stats.size % pieceSize
@@ -341,7 +341,7 @@ export async function createManifest(options:{
         piece.integrity = hash.digest("hex")
     }
     return parseManifest({
-        downloads: options.downloads,
+        downloads: Array.isArray(options.downloads)?options.downloads:[options.downloads],
         filesize: stats.size,
         integrity: integrity.digest("hex"),
         pieces: pieces

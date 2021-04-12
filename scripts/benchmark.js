@@ -18,13 +18,13 @@ const benchmarkMD = (variables) => {
         cpus[cpu.model] = (cpus[cpu.model] || 0)+1
     })
     return `# Benchmarks
-Please see the [Configuration](#Configuration) used for this Benchmark.
+Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on ${new Date().toISOString()} by [\`benchmark.js\`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
 ## Results
 The benchmark took ${variables.time} seconds.<br>
 | Method | File Size | Elapsed Time | Average Speed |
 |-|-|-|-|
 ${variables.tests.sort((a, b) => a[1] - b[1]).map((test, i) => {
-    let name =test[0]
+    let name = test[0]
     const filesize = byteSize(manifest.filesize, {units: "metric_octet"})
     let time = (test[1]/1000).toFixed(2)+"s"
     let speed = byteSize(manifest.filesize/(test[1]/1000), {units: "metric_octet"})+"/s"
