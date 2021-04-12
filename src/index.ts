@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
 import {EventEmitter} from "events";
 import { createReadStream, createWriteStream, mkdirSync, mkdtempSync, rmdirSync } from "fs";
-import { readFile, stat } from "fs/promises";
+import { promises as fs } from "fs";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
 import fetch from "node-fetch"
 import * as PromisePool from "es6-promise-pool";
@@ -308,7 +308,7 @@ export async function createManifest(options:{
 }):Promise<Manifest>{
     // 25 MB
     const pieceSize = options.pieceSize || 25e6
-    const stats = await stat(options.filepath)
+    const stats = await fs.stat(options.filepath)
     if(stats.size === 0)throw new Error("Filesize is 0")
     const lastPieceSize = stats.size % pieceSize
     const pieces:Manifest["pieces"] = []
@@ -413,7 +413,7 @@ export class Downloader extends EventEmitter {
             })
             .catch(err => this.emit("error", err))
         }else if("manifest_path" in options){
-            readFile(options.manifest_path)
+            fs.readFile(options.manifest_path)
             .then(body => {
                 let manifest:Manifest
                 if(body.slice(0, MANIFEST_BUFFER_HEADER.length).equals(MANIFEST_BUFFER_HEADER)){

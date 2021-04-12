@@ -20,7 +20,7 @@ See [api](./manifest.md#bongocreatemanifest)
 ```js
 const Bongo = require("bongodl")
 const { join } = require("path")
-const fs = require("fs/promises")
+const {promises: fs} = require("fs")
 
 // Let's suppose you have a `file.txt` in the same folder as your .js
 const filepath = join(__dirname, "file.txt")
@@ -52,7 +52,7 @@ See [api](./download.md)
 ```js
 const Bongo = require("bongodl")
 const { join, dirname } = require("path")
-const fs = require("fs/promises")
+const {promises: fs} = require("fs")
 
 // Create an instance of Downloader
 new Bongo.Downloader({

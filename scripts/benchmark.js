@@ -54,7 +54,7 @@ ${backticks}`
 }
 
 const fetch = require("node-fetch").default
-const { rmdir, mkdir, rename, writeFile } = require("fs/promises")
+const { promises: { rmdir, mkdir, rename, writeFile }} = require("fs")
 const { createWriteStream } = require("fs")
 
 ;(async () => {
