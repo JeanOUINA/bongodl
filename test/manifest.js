@@ -7,19 +7,19 @@ const integrity = "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c
 const downloadLink = "http://127.0.0.1/file.bin"
 const pieces = [
     {
-        range: [0, 256],
+        range: [0, 255],
         integrity: "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
     },
     {
-        range: [256, 512],
+        range: [256, 511],
         integrity: "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
     },
     {
-        range: [512, 768],
+        range: [512, 767],
         integrity: "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
     },
     {
-        range: [768, 1024],
+        range: [768, 1023],
         integrity: "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
     },
 ]

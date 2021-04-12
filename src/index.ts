@@ -122,7 +122,7 @@ export function parseManifest(manifest_raw:string|Buffer|Manifest):Manifest{
             if(startByte !== lastByte)throw new ParseError("New byte isn't the next one")
             const endByte = parseInt(end)
             if(endByte <= startByte)throw new ParseError("piece size isn't positive and something else than 0.")
-            lastByte = endByte
+            lastByte = endByte+1
             pieces.push({
                 range: [startByte, endByte],
                 integrity
@@ -198,7 +198,7 @@ export function parseManifest(manifest_raw:string|Buffer|Manifest):Manifest{
                     piece.integrity = integrityBuffer.toString("hex")
                     if(piece.integrity.length !== 64)throw new ParseError("Invalid piece integrity.")
                     manifest.pieces.push(piece)
-                    lastByte = endByte
+                    lastByte = endByte+1
                     break
                 }
                 default: {
