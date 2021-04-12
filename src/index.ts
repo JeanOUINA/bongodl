@@ -316,14 +316,14 @@ export async function createManifest(options:{
     let offset = 0
     for(let i = 0; i < piecesFullCount; i++){
         pieces.push({
-            range: [offset, pieceSize+offset],
+            range: [offset, pieceSize+offset-1],
             integrity: null
         })
         offset = pieceSize+offset
     }
     if(lastPieceSize !== 0){
         pieces.push({
-            range: [offset, lastPieceSize+offset],
+            range: [offset, lastPieceSize+offset-1],
             integrity: null
         })
     }
