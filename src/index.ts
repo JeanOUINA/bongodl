@@ -1,12 +1,13 @@
 import { createHash } from "crypto";
 import EventEmitter from "events";
-import { createReadStream, createWriteStream, mkdtempSync, rmdirSync } from "fs";
+import { createReadStream, createWriteStream, mkdirSync, mkdtempSync, rmdirSync } from "fs";
 import { readFile, stat } from "fs/promises";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
 import fetch from "node-fetch"
 import PromisePool from "es6-promise-pool";
 import { PassThrough } from "stream";
 import { join } from "path";
+import os from "os"
 
 function numberToBuffer(number:number):Buffer{
     let hex = number.toString(16)
@@ -295,6 +296,8 @@ export function formatManifest(manifest:Manifest, format:"string"|"buffer"|"json
         case "json": {
             return JSON.stringify(manifest, null, "    ")
         }
+        default:
+            throw new Error(`format ${format} is not valid.`)
     }
 }
 
@@ -302,7 +305,7 @@ export async function createManifest(options:{
     downloads: string[]|string,
     filepath: string,
     pieceSize?: number
-}){
+}):Promise<Manifest>{
     // 25 MB
     const pieceSize = options.pieceSize || 25e6
     const stats = await stat(options.filepath)
@@ -369,15 +372,16 @@ export class Downloader extends EventEmitter {
         emitStatus?: boolean
     }){
         super()
-        this.concurrent = options.concurrent || 20
+        this.concurrent = options.concurrent || 10
         if(!("startAuto" in options) || options.startAuto){
             this.on("manifest", this.startFetching)
         }
         if(options.stateDir){
             this.stateDir = options.stateDir
         }else{
-            this.stateDir = mkdtempSync(`bongo-`)
+            this.stateDir = mkdtempSync(join(os.tmpdir(), "bongo-"))
         }
+        mkdirSync(this.stateDir, {recursive: true})
         this.emitStatus = !!options.emitStatus
         if("manifest" in options){
             try{
@@ -533,7 +537,7 @@ export class Downloader extends EventEmitter {
             stream.end()
         }, err => this.abort(err))
     }
-    abort(error:Error){
+    private abort(error:Error){
         rmdirSync(this.stateDir, {recursive: true})
         this.emit("error", error)
     }

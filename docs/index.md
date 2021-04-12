@@ -16,6 +16,7 @@ yarn add bongodl
 ```
 # Usage
 ## Create a manifest from a file
+See [api](./manifest.md#bongo.createmanifest)
 ```js
 const Bongo = require("bongodl")
 const { join } = require("path")
@@ -47,6 +48,7 @@ Bongo.createManifest({
 ```
 You can now share this manifest, and people can download the file from the server(s) you specified.
 ## Download a file from a manifest
+See [api](./download.md)
 ```js
 const Bongo = require("bongodl")
 const { join, dirname } = require("path")
@@ -78,6 +80,6 @@ new Bongo.Downloader({
     process.exit(1)
 })
 ```
-Bongo has already done everything. Download each pieces, verify them, assemble and verify the file before giving it to you.
+Bongo has already done everything. Downloaded each pieces, verified them, assembled and verified the file before giving it to you.
 # Manifest
 See [Manifest.md](manifest.md)

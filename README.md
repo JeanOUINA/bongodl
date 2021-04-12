@@ -5,9 +5,10 @@ This module basically downloads files "faster" (see [benchmarks](benchmarks.md))
 - Easy to use
 - Reliable
 - Automatically checks integrity
+- Avoids this kind of thing<br> ![thing](https://cdn.discordapp.com/attachments/760911028980023318/831105758707974164/0tqAiCNcJqcpmm6HSEAyriHPf.png)<br>![second thing](https://cdn.discordapp.com/attachments/760911028980023318/831107372012929044/unknown.png)
 # Disadvantages
 - You need a [manifest](docs/manifest.md) first.
-- The server must support the `Range` header.
+- [The server must support the `Range` header.](docs/server.md)
 # Installation
 ```sh
 # Install using npm

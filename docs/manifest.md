@@ -1,5 +1,12 @@
 # Manifest
+> You don't need to encode/decode the manifest yourself. Simply use our apis:<br>
+> [`Bongo.createManifest`](#bongo.createmanifest)<br>
+> [`Bongo.parseManifest`](#bongo.parsemanifest)<br>
+> [`Bongo.formatmanifest`](#bongo.formatmanifest)
 # Contents
+- [Bongo.createManifest](#bongo.createmanifest)
+- [Bongo.parseManifest](#bongo.parsemanifest)
+- [Bongo.formatmanifest](#bongo.formatmanifest)
 - [JSON Format](#json-format)
     - [filesize](#filesize)
     - [integrity](#integrity)
@@ -20,6 +27,45 @@
     - [Integrity](#binary-integrity)
     - [Download links](#binary-download-links)
     - [File pieces](#binary-file-pieces)
+# Bongo.createManifest
+Create a manifest from a file.
+```ts
+function createManifest(options:{
+    downloads: string[]|string,
+    filepath: string,
+    pieceSize?: number
+}):Promise<Manifest>
+```
+| Property | Description | Default |
+|-|-|-|
+| downloads | The list of download links. If the first link is down, Bongo will use the second, and then the third. |
+| filepath | A local path to your file. Bongo will read it to etablish integrity. |
+| pieceSize? | The size of pieces for the file. It should be something like 10-100mb depending on the file size. | 25e6 (25mb)
+> Returns Promise<[Manifest](#json-format)>
+# Bongo.parseManifest
+Parse a manifest.
+```ts
+function parseManifest(manifest_raw:string|Buffer|Manifest):Manifest
+```
+| Property | Description |
+|-|-|
+| manifest_raw | The manifest in a raw form. Please note that this function doesn't accept stringified json. |
+> Returns [Manifest](#json-format)
+# Bongo.formatManifest
+Parse a manifest.
+```ts
+function formatManifest(manifest:Manifest, format:"string"):string
+function formatManifest(manifest:Manifest, format:"buffer"):Buffer
+function formatManifest(manifest:Manifest, format:"json"):string
+function formatManifest(manifest:Manifest, format:"string"|"buffer"|"json"):string|Buffer
+```
+| Property | Description |
+|-|-|
+| manifest | The parsed manifest. |
+| format | The format you want the manifest in. |
+
+
+> Returns string|Buffer.
 # JSON Format
 The manifest is structured like this:
 ```ts
@@ -78,7 +124,7 @@ the first part is the range, as described in the json format. The second is the 
 Every string manifest ends with `#BONGODL-MANIFEST-END#`.
 
 # Binary format
-> This part is very technical. You may not need to read this at all. Bongo handles everything on the encoding/parsing side.
+> This section is very technical. You may not need to read this at all. Bongo handles everything on the encoding/parsing side.
 
 Here's an example of an encoded binary manifest, hex encoded for convenience.
 ```
