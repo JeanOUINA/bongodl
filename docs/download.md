@@ -2,7 +2,7 @@
 > See details on how to create a manifest [here](./manifest.md)
 
 # Contents
-- [Bongo.Downloader](#bongo.downloader)
+- [Bongo.Downloader](#bongodownloader)
     - [startFetching](#startFetching)
     - [on("manifest", ...)](#Event-manifest))
     - [on("status", ...)](#Event-status)

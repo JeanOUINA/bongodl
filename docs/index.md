@@ -16,7 +16,7 @@ yarn add bongodl
 ```
 # Usage
 ## Create a manifest from a file
-See [api](./manifest.md#bongo.createmanifest)
+See [api](./manifest.md#bongocreatemanifest)
 ```js
 const Bongo = require("bongodl")
 const { join } = require("path")

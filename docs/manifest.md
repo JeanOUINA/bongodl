@@ -1,12 +1,12 @@
 # Manifest
 > You don't need to encode/decode the manifest yourself. Simply use our apis:<br>
-> [`Bongo.createManifest`](#bongo.createmanifest)<br>
-> [`Bongo.parseManifest`](#bongo.parsemanifest)<br>
-> [`Bongo.formatmanifest`](#bongo.formatmanifest)
+> [`Bongo.createManifest`](#bongocreatemanifest)<br>
+> [`Bongo.parseManifest`](#bongoparsemanifest)<br>
+> [`Bongo.formatmanifest`](#bongoformatmanifest)
 # Contents
-- [Bongo.createManifest](#bongo.createmanifest)
-- [Bongo.parseManifest](#bongo.parsemanifest)
-- [Bongo.formatmanifest](#bongo.formatmanifest)
+- [Bongo.createManifest](#bongocreatemanifest)
+- [Bongo.parseManifest](#bongoparsemanifest)
+- [Bongo.formatmanifest](#bongoformatmanifest)
 - [JSON Format](#json-format)
     - [filesize](#filesize)
     - [integrity](#integrity)
