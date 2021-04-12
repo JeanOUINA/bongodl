@@ -26,5 +26,6 @@
     "url": "https://github.com/JeanOUINA/bongodl"
   },
   "author": "JeanOUINA",
-  "license": "UNLISENCED"
+  "license": "UNLISENCED",
+  "types": "dist/index.d.ts"
 }

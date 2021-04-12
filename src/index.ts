@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import EventEmitter from "events";
+import * as EventEmitter from "events";
 import { createReadStream, createWriteStream, mkdirSync, mkdtempSync, rmdirSync } from "fs";
 import { readFile, stat } from "fs/promises";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
@@ -7,7 +7,7 @@ import fetch from "node-fetch"
 import PromisePool from "es6-promise-pool";
 import { PassThrough } from "stream";
 import { join } from "path";
-import os from "os"
+import * as os from "os"
 
 function numberToBuffer(number:number):Buffer{
     let hex = number.toString(16)
