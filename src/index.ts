@@ -4,7 +4,7 @@ import { createReadStream, createWriteStream, mkdirSync, mkdtempSync, rmdirSync 
 import { readFile, stat } from "fs/promises";
 import { MANIFEST_BUFFER_FOOTER, MANIFEST_BUFFER_HEADER, MANIFEST_STRING_FOOTER, MANIFEST_STRING_HEADER, VALUE_TYPE } from "./constants";
 import fetch from "node-fetch"
-import PromisePool from "es6-promise-pool";
+import * as PromisePool from "es6-promise-pool";
 import { PassThrough } from "stream";
 import { join } from "path";
 import * as os from "os"
@@ -526,7 +526,8 @@ export class Downloader extends EventEmitter {
             }
             return process
         })
-        const pool = new PromisePool(() => {
+        // PromisePool types are broken
+        const pool = new (PromisePool as unknown as typeof import("es6-promise-pool").default)(() => {
             const create = promisesLeft.shift()
             return create && create() || null
         }, this.concurrent)
