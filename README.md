@@ -34,7 +34,8 @@ See [Documentation](docs/index.md).
     [ ] Proxy Support
     [ ] Calculating current download speed
     [ ] Resume Download (after restart of program)
-    
+# Real world uses
+ - [Lightcord Installer](https://github.com/Lightcord/lc-installer)
 ## Why "Bongodl"
 I just bought a monkey plush, and Phorcys named it Bongo. I also wanted to make this library. So here it is, Bongodl<br><br>
 ![Bongo is taking over everything](https://cdn.discordapp.com/attachments/829306086800228363/830405155153379358/bongo.gif)
