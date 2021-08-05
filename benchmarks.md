@@ -1,19 +1,19 @@
 # Benchmarks
-Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on 2021-04-12T18:08:06.694Z by [`benchmark.js`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
+Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on 2021-08-05T14:54:47.229Z by [`benchmark.js`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
 ## Results
-The benchmark took 38.46 seconds.<br>
+The benchmark took 28.54 seconds.<br>
 | Method | File Size | Elapsed Time | Average Speed |
 |-|-|-|-|
-|**Bongo**|143.7 Mo|**6.98s**|**20.6 Mo/s**|
-|node-fetch|143.7 Mo|31.44s|4.6 Mo/s|
+|**Bongo**|143.7 Mo|**8.88s**|**16.2 Mo/s**|
+|node-fetch|143.7 Mo|19.66s|7.3 Mo/s|
 
 ## Configuration
 ```
-OS:             Windows 10.0.19042
-Version:        Windows 10 Pro
+OS:             Linux/Unknown 4.19.0-17-amd64
+Version:        #1 SMP Debian 4.19.194-2 (2021-06-21)
 Arch:           x64
-CPUs:           12x Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
-Memory:         17.0 Go
+CPUs:           8x Intel(R) Xeon(R) CPU E5-1620 v3 @ 3.50GHz
+Memory:         16.7 Go
 
 File URL(s):    https://lightcord.org/api/v1/gh/releases/Lightcord/Lightcord/0.1.5/lightcord-win32-ia32.zip, https://github.com/Lightcord/Lightcord/releases/download/0.1.5/lightcord-win32-ia32.zip
 File size:      143.725695 Mo
