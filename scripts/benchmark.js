@@ -149,7 +149,7 @@ const { createWriteStream } = require("fs")
 
         new bongo.Downloader({
             // Count the manifest fetching time in the benchmark.
-            manifest_url: "https://lightcord.org/api/v1/gh/releases/Lightcord/Lightcord/0.1.5/lightcord-win32-ia32.zip.manifest",
+            manifest: manifest,
             concurrent: 10,
             emitStatus: true,
             startAuto: true,

@@ -1,11 +1,11 @@
 # Benchmarks
-Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on 2021-08-05T14:54:47.229Z by [`benchmark.js`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
+Please see the [configuration](#Configuration) used for this Benchmark. This file was auto-generated on 2021-08-05T15:03:36.089Z by [`benchmark.js`](scripts/benchmark.js) script. Run it yourself to see how this library performs on your system.
 ## Results
-The benchmark took 28.54 seconds.<br>
+The benchmark took 14.70 seconds.<br>
 | Method | File Size | Elapsed Time | Average Speed |
 |-|-|-|-|
-|**Bongo**|143.7 Mo|**8.88s**|**16.2 Mo/s**|
-|node-fetch|143.7 Mo|19.66s|7.3 Mo/s|
+|**Bongo**|143.4 Mo|**5.88s**|**24.4 Mo/s**|
+|node-fetch|143.4 Mo|8.82s|16.3 Mo/s|
 
 ## Configuration
 ```
@@ -15,24 +15,27 @@ Arch:           x64
 CPUs:           8x Intel(R) Xeon(R) CPU E5-1620 v3 @ 3.50GHz
 Memory:         16.7 Go
 
-File URL(s):    https://lightcord.org/api/v1/gh/releases/Lightcord/Lightcord/0.1.5/lightcord-win32-ia32.zip, https://github.com/Lightcord/Lightcord/releases/download/0.1.5/lightcord-win32-ia32.zip
-File size:      143.725695 Mo
-Integrity:      7bda5032633b248a161d195b633cff0141bfc51a9ce3837f3828eec5a56a52fb
-Pieces:         15
+File URL(s):    https://lightcord.org/api/v1/gh/releases/Lightcord/Lightcord/v0.1.9/lightcord-win32-ia32.zip, https://github.com/Lightcord/Lightcord/releases/download/v0.1.9/lightcord-win32-ia32.zip
+File size:      143.425447 Mo
+Integrity:      139ed54bccd789324bbc294f1153da83efb0f23d7e79418a7ee3e38b8d22358c
+Pieces:         18
 
-Range 0-9999999 (10.0 Mo), Integrity 64297d1b2e772d4f01489e92b5c98fa180163cc4bbd8cffab5af86600d320ecf
-Range 10000000-19999999 (10.0 Mo), Integrity 63bb93dc2ec6135e207bbc1dcccdb28d7dbca3985fc33737acf118660a8ef868
-Range 20000000-29999999 (10.0 Mo), Integrity 1d7bee22428a18e45d67ed7e3ffb567060511e208a539a7a7cfc3c01c0f9f693
-Range 30000000-39999999 (10.0 Mo), Integrity 1f16cdfc236a9c7d16e26bca64da68953ef0ea4e4fd836c73f0279cb276b6dc4
-Range 40000000-49999999 (10.0 Mo), Integrity ebcad98fd6bf92cbf227e1eaee26270860bb445943168d5a5fbed5a5b26b0519
-Range 50000000-59999999 (10.0 Mo), Integrity d075dc09baf1519cbb66764597166e9ab41a7a17a9220da43dda96658f60ac86
-Range 60000000-69999999 (10.0 Mo), Integrity cb38092e3e656602c5bfdf7cb38d30613c1677f2f2457ab64304814c0b40fe5e
-Range 70000000-79999999 (10.0 Mo), Integrity 71978f27518b517e0cbd4af1181cf3eea3af5bb64e94586dd032b36e998f8771
-Range 80000000-89999999 (10.0 Mo), Integrity de74d6a722166010909e9b7889f69aaa66ca05922fa1a33ead3ff296e656ede1
-Range 90000000-99999999 (10.0 Mo), Integrity 29d15c4047d129f26661c2370ead1faa6f899eabc420c9779c82c6c7df4162f4
-Range 100000000-109999999 (10.0 Mo), Integrity 74c34dbcb521e6794a7080b93d0c93d45fe9693973919b815c190adc8c6a028b
-Range 110000000-119999999 (10.0 Mo), Integrity b4fab893c58e7187a9483ca52cecdb4b201c5d9a6055b773ddcbb9cf91a70fed
-Range 120000000-129999999 (10.0 Mo), Integrity b6026c9b84d47727d7564a99869b55ce57845d25176ceed6bcfb3de4a91f3e83
-Range 130000000-139999999 (10.0 Mo), Integrity 8b58da6241467416e5f59f7fd1c55d5f5a6f9971d5667902f138fc477a1c44aa
-Range 140000000-143725694 (3.7 Mo), Integrity 7bbfc4cb00aa7d388f73c12e0f2ccd58e34f39028303f9efba8879a89fe43fcc
+Range 0-7999999 (8.0 Mo), Integrity c6e415d955924e76e91e9855e13afc7a7128b4c4f6c9c3ec241d6f359916a671
+Range 8000000-15999999 (8.0 Mo), Integrity 8fef609ccbdb3e9584064a80dda803a6cb000603e0c4f1e171df860bd43291e7
+Range 16000000-23999999 (8.0 Mo), Integrity 8533c722335627ce1f596dc5a29430adf5f5a7e11a05e586a3f4a88a29433355
+Range 24000000-31999999 (8.0 Mo), Integrity e32c10f77dc6893030e3eeca41374e7d7c73311f13c9fddb91ebe43b13fb5d48
+Range 32000000-39999999 (8.0 Mo), Integrity 53fc0e7a7b4e53f8dbf06874ab749247a370c53c50f01d31a24e143be4150900
+Range 40000000-47999999 (8.0 Mo), Integrity 033261bedf6faec5f17874d5c513e460a80fc850cd0b3ec951ddaad3b7d316b6
+Range 48000000-55999999 (8.0 Mo), Integrity d1dad548986ff208d32323d70594329a32f544eadfd7a1de2e8ca09b86e7591b
+Range 56000000-63999999 (8.0 Mo), Integrity c549663bb638f971079075ad74587563b0c3bcb24895fbd1aeb8d742e7134dad
+Range 64000000-71999999 (8.0 Mo), Integrity 47af44e82c4dc4736ae4e3626a702dc60434975b20ede3c0548fe67519ceda4c
+Range 72000000-79999999 (8.0 Mo), Integrity ef9a00387db15ca900af62704d48af6c33dff9fe5c4d75bb35cb4608dd20e1a4
+Range 80000000-87999999 (8.0 Mo), Integrity abab51b51d3cf36f5dce748898e1d6ccdaf0b1827dbf097214bb0c55953e71e1
+Range 88000000-95999999 (8.0 Mo), Integrity f316137466b05c5fe6e9ea9d833a0744e09a6ad15f31384c0b0aad51f31abc2a
+Range 96000000-103999999 (8.0 Mo), Integrity d79f055290da54fc97cd332d45ba334883c839d4175fe6ed63a8c3f98c3cb8c0
+Range 104000000-111999999 (8.0 Mo), Integrity 42d72e6d7b22242ae13a3b5920b5c36dbd3cbad061080bc4090e45b01773d39e
+Range 112000000-119999999 (8.0 Mo), Integrity addde00572d79060558882cf5d784e517fa9f4a38846dc05613cc29ed8289c36
+Range 120000000-127999999 (8.0 Mo), Integrity 9b7fe9069dbbdabbc7795ec00f78d42cc2a9287aa21445de2d8d1ba4fb36e129
+Range 128000000-135999999 (8.0 Mo), Integrity 960133fdf0494852d930fc7b858f5f3968c1bb169fb6b3cc1c18ed575a837953
+Range 136000000-143425446 (7.4 Mo), Integrity 1578655b83ef29de4708488041d263194c7a406ff9afa2aa49c1673b0bc10090
 ```
